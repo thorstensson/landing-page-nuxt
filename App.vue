@@ -36,9 +36,8 @@ body {
 body {
     position: relative;
     overflow-x: hidden;
-    min-height: 100vh;
-    /* safari mobile viewport bug fix */
-    min-height: -webkit-fill-available;
+    /*would like vh but eh safaris bottom bar grr, thanks Apple*/
+    min-height: 100% 
 }
 
 .hide {
