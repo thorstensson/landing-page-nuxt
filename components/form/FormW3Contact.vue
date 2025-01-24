@@ -125,7 +125,6 @@ form button {
     width: 70px;
     padding: 7px;
     text-align: center;
-    font-size: 12px;
     font-weight: 400;
     transition: background-color 0.3s ease-in-out;
 }

@@ -5,7 +5,7 @@ definePageMeta({
 });
 
 const scrollConfig = reactive({
-    text: "Hi there! New portfolio coming March 1. Swedish developer, addicted to Vue / Nuxt. I care for simplicity & iterated ideas.  Now open to a new full-time role. Saludos! Thomas, Barcelona...",
+    text: "Hi there! New portfolio coming March 1. Swedish developer, addicted to Vue / Nuxt. I care for simplicity & iterated ideas.  Now open to a new full-time role. 🤍 to B. Saludos! Thomas, Barcelona ...",
     speed: "60s",
 })
 </script>

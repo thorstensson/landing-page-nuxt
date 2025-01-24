@@ -3,6 +3,10 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
 
+  devServer: {
+    host: '0.0.0.0'
+  },
+
   site: {
     url: 'https://thomasjt.com',
     name: 'Thomas James Thorstensson',
@@ -11,7 +15,7 @@ export default defineNuxtConfig({
 
   seo: {
     meta: {
-      description: 'My awesome website',
+      description: 'Thomas JT is a creative developer focusing on Vue, Nuxt and all things R&D. He lives in Barcelona.',
     }
   },
 

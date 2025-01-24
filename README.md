@@ -1,6 +1,8 @@
-# Nuxt Minimal Starter
+![Static Badge](https://img.shields.io/badge/Nuxt3-green)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Landing Page Nuxt
+
+Landing page for my new netlify domain, [thomasjt.com](https://www.thomasjt.com)! To be replaced by my next portfolio when ready (due late february) :hibiscus:
 
 ## Setup
 
@@ -71,5 +73,10 @@ yarn preview
 # bun
 bun run preview
 ```
+## License
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## More on Nuxt 3
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information :penguin:

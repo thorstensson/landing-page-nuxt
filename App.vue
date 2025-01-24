@@ -16,12 +16,8 @@ onMounted(() => {
 <template>
     <div class="hide" :class="{ 'on-ready': isMounted }">
         <NuxtLayout>
-            <NuxtPage :transition="{
-                name: 'layout',
-                mode: 'out-in'
-            }" />
+            <NuxtPage />
         </NuxtLayout>
-        <NuxtLoadingIndicator color="#67d360" :throttle="0" />
     </div>
 </template>
 
@@ -36,10 +32,13 @@ body {
     -o-font-smoothing: antialiased;
 }
 
+
 body {
-    min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    min-height: 100vh;
+    /* safari mobile viewport bug fix */
+    min-height: -webkit-fill-available;
 }
 
 .hide {
@@ -51,5 +50,15 @@ body {
 .on-ready {
     opacity: 1;
     filter: blur(0px)
+}
+
+.-bottom-screen-element {
+
+    position: fixed;
+
+    bottom: 0;
+
+    bottom: env(safe-area-inset-bottom);
+
 }
 </style>
