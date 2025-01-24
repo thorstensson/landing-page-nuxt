@@ -1,0 +1,32 @@
+/* My Earth II palette (Coloors)*/
+$clr-primary: #050d0a; // bg
+$clr-secondary: #FDFAFC; // font
+$clr-tertiary: #BACDB0;
+$clr-quarternary: #729B79;
+$clr-quinary: #E34A6F;
+
+
+
+/* Variable font paragraphs and headings */
+$sans-text: "Rethink Sans",Helvetica, sans-serif; 
+$sans-text-optic:auto;
+
+$sans-ui: "Commisioner", Helvetica, sans-serif;
+$sans-ui-optic:auto;
+
+/* Sizes, might get away with font clamp mixin for most body stuff though */
+$h1: 80px;
+$h1-lg: 100px;
+$h1-xl: 140px;
+$h1-xxl: 160px;
+
+/* Padding */
+$page-hpad: 20px;
+$page-hpad-lg: 60px;
+$page-hpad-xl: 60px;
+$page-hpad-xxl: 70px;
+
+$page-vpad: 20px;
+
+
+
