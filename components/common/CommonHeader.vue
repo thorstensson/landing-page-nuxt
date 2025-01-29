@@ -4,7 +4,7 @@
 
 <template>
   <div class="header-wrapper">
-    <div class="bullet">ThOMAS JAMES THORSTENSSON</div>
+    <div class="bullet">THOMAS JAMES THORSTENSSON</div>
   </div>
 </template>
 
