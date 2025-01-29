@@ -4,7 +4,7 @@
 
 <template>
   <div class="header-wrapper">
-    <div class="bullet"><span>TJT</span></div>
+    <div class="bullet">ThOMAS JAMES THORSTENSSON</div>
   </div>
 </template>
 
@@ -18,22 +18,7 @@
   user-select: none;
   font-display: fallback;
   font-family: $sans-ui;
-  color: $clr-secondary;
+  color: $secondary;
   font-size: 12px;
-}
-
-.bullet span {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.bullet span::before {
-  content: "";
-  display: block;
-  width: 7px;
-  height: 7px;
-  background-color: $clr-secondary;
-  border-radius: 50%;
 }
 </style>

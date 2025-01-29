@@ -29,12 +29,13 @@ defineProps<{
         will-change: transform;
         padding-left: 100px;
         overflow-x: hidden;
-        color: $clr-secondary;
+        color: $secondary;
         font-display: fallback;
         font-family: $sans-text;
         font-size: clamp-calc(480px, 1920px, 60px, 180px);
         font-weight: 400;
         white-space: nowrap;
+        text-transform: uppercase;
         animation: marquee v-bind('speed') linear infinite;
     }
 

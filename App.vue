@@ -24,7 +24,7 @@ onMounted(() => {
 <style>
 html,
 body {
-    background-color: black;
+    background-color: #0F0F0f;
     margin: 0;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -32,12 +32,11 @@ body {
     -o-font-smoothing: antialiased;
 }
 
-
 body {
     position: relative;
     overflow-x: hidden;
     /*would like vh but eh safaris bottom bar grr, thanks Apple*/
-    min-height: 100% 
+    min-height: 100%
 }
 
 .hide {
@@ -52,12 +51,8 @@ body {
 }
 
 .-bottom-screen-element {
-
     position: fixed;
-
     bottom: 0;
-
     bottom: env(safe-area-inset-bottom);
-
 }
 </style>

@@ -3,7 +3,7 @@
 @mixin blend-mode-difference {
     mix-blend-mode: difference;
     background-clip: text;
-    background-color: variables.$clr-primary;
+    background-color: variables.$primary;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }

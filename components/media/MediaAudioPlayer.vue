@@ -3,11 +3,10 @@
 /**
  * An even more slimmed down version of the player.
  * TODO: when portfolio is done, revisit this for improvements
- * (should I use Audio class?)
+ * (should I use Audio class, load server side?)
  */
 
 import { ref, useTemplateRef, reactive, watch, onMounted, computed } from 'vue'
-import { gsap } from 'gsap'
 import {
     PlayIcon,
     PauseIcon,
@@ -15,7 +14,6 @@ import {
     ChevronLeftIcon,
 } from '@heroicons/vue/24/solid'
 
-import SpectrumVisualizer from './MediaAudioVisualizer.vue'
 import { useStoreRef } from '@/composable/useStoreRef'
 
 const spectrum = useTemplateRef('spectrum')
@@ -29,8 +27,6 @@ const isPlaying = ref<boolean>(false)
 
 const PATH = useRuntimeConfig().public.s3Path
 
-// The panel width, if track text wider then GSAP yoyo
-const TRACK_WIDTH = 160;
 
 //Add tracks here; no plans to make a DOM playlist
 const playlist = reactive([
@@ -110,6 +106,7 @@ const timeUpdate = () => {
     setTimes()
 }
 
+// Times, leaving this in, in case you want to use
 const setTimes = () => {
     const m = ('0' + Math.floor((audioEl.value!.currentTime / 60) % 60)).slice(
         -2
@@ -118,7 +115,7 @@ const setTimes = () => {
     trackTime.value = `${m}:${s}`
 }
 
-// E from v-on listener
+// E from v-on listener, leaving this in, in case you want to use
 const durationUpdate = () => {
     const m = ("0" + Math.floor((audioEl.value!.duration / 60) % 60)).slice(-2)
     const s = ("0" + Math.floor(audioEl.value!.duration % 60)).slice(-2)
@@ -137,8 +134,6 @@ const onTrackEnded = () => {
         currentTrack.value = currTrack.value
     }
 }
-
-
 onMounted(() => {
     const { addElem } = useStoreRef()
     addElem("audioEl", audioEl)
@@ -167,16 +162,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-.currstate {
-    color: white;
-    position: fixed;
-    width: 100px;
-    top: 100px;
-    left: 0px;
-    z-index: 900;
-    font-size: 20px;
-}
-
 body {
     -webkit-overflow-scrolling: none;
     overflow: hidden;
@@ -196,7 +181,6 @@ body {
 .player-wrapper * {
     font-display: fallback;
     font-family: $sans-ui;
-    font-optical-sizing: $sans-ui-optic;
     font-size: 12px;
     font-weight: 250;
 }
@@ -213,14 +197,13 @@ body {
     &__pause {
         position: absolute;
         display: none;
-        width: 34px;
+        width: 24px;
         height: auto;
-        /*compensate for svg block*/
-        right: -5px;
-        bottom: -3px;
-        color: #f8f9fa;
+        right: -2px;
+        bottom: 0px;
+        color: $shade1;
         cursor: pointer;
-        transition: color 0.3s ease-in-out;
+        transition: color .3s ease-in-out;
 
         &--show {
             display: block;
@@ -229,19 +212,19 @@ body {
 
     &__play:hover,
     &__pause:hover {
-        color: $clr-quinary;
+        color: $accent;
     }
 
     &__prev,
     &__next {
         position: absolute;
-        width: 30px;
+        width: 21px;
         height: auto;
-        right: 44px;
-        bottom: -2px;
-        color: #f8f9fa;
+        right: 34px;
+        bottom: 2px;
+        color: $shade1;
         cursor: pointer;
-        transition: color 0.3s ease-in-out;
+        transition: color .3s ease-in-out;
 
         &--end {
             opacity: 0.5;
@@ -249,12 +232,12 @@ body {
     }
 
     &__next {
-        right: 24px;
+        right: 20px;
     }
 
     &__next:hover,
     &__prev:focus {
-        color: $clr-quinary;
+        color: $accent;
     }
 }
 </style>

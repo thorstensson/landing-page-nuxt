@@ -16,7 +16,7 @@
   user-select: none;
   font-display: fallback;
   font-family: $sans-ui;
-  color: $clr-secondary;
+  color: $secondary;
   font-display: fallback;
   font-size: 12px;
 }
@@ -26,6 +26,6 @@ a {
 }
 
 a:hover {
-  color: $clr-quinary;
+  color: $accent;
 }
 </style>

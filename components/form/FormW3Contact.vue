@@ -80,7 +80,7 @@ const submitForm = async () => {
 
 h2 {
     font-family: $sans-text;
-    color: $clr-secondary;
+    color: $secondary;
 }
 
 ::placeholder {
@@ -102,9 +102,9 @@ form input,
 form textarea,
 form button {
     border-radius: 10px;
-    border: 1px solid $clr-secondary;
-    background-color: $clr-primary;
-    color: $clr-secondary;
+    border: 1px solid $secondary;
+    background-color: $primary;
+    color: $secondary;
     font-family: $sans-text;
 }
 
@@ -130,6 +130,6 @@ form button {
 }
 
 form button:hover {
-    background-color: #E34A6F
+    background-color: $accent;
 }
 </style>

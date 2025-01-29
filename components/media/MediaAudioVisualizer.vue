@@ -41,28 +41,28 @@ const createAnalyserData = () => {
 }
 
 /**
- * MDN: The getByteFrequencyData() method of the AnalyserNode interface copies 
+ * MDN: The getByteFrequencyData() method of the AnalyserNode interface copies
  * the current frequency data into a Uint8Array (unsigned byte array) passed into it.
  * The frequency data is composed of integers on a scale from 0 to 255.
  * Each item in the array represents the decibel value for a specific frequency.
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/getByteFrequencyData|MDN}
  */
 const startAnimRequest = () => {
-    function doBars() {
-        let x = 0
+    function draw() {
+        let x = 5
         if (canvas.value && ctx) {
             ctx.clearRect(0, 0, canvas.value.width, canvas.value.height)
             analyser.value?.getByteFrequencyData(dataArray)
             for (let i = 0; i < bufferLength; i++) {
                 const barHeight = dataArray[i]
-                ctx.fillStyle = "#E34A6F"
+                ctx.fillStyle = `rgb(${barHeight + 100} 200 150)`;
                 ctx.fillRect(x, canvas.value.height - barHeight, barWidth, barHeight)
-                x += barWidth 
+                x += barWidth + 1
             }
         }
-        myReq = requestAnimationFrame(doBars)
+        myReq = requestAnimationFrame(draw)
     }
-    myReq = requestAnimationFrame(doBars)
+    draw()
 }
 
 const cancelAnimRequest = () => {
@@ -101,6 +101,6 @@ onMounted(() => {
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-    right: 70px;
+    right: 58px;
 }
 </style>
